@@ -15,7 +15,7 @@ module Ears
       begin
         audio_uri = "http://#{params[:audio_uri]}"
 
-        details = Open3.popen3("/usr/local/bin/ffmbc -i #{audio_uri}"){|i,o,e,t| p e.read.chomp }
+        details = Open3.popen3("#{FFMBC} -i #{audio_uri}"){|i,o,e,t| p e.read.chomp }
         p [:details, details]
         
         matches = details.match(/Duration: (\d\d:\d\d:\d\d)/im)
