@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'sinatra', :require => 'sinatra/base'
+gem "rack", "~> 1.2.1"
+gem "sinatra", "~>1.2.6", :require => 'sinatra/base'
 gem 'json', :require => 'json/ext'
 gem 'racksh'
 gem 'capistrano'
