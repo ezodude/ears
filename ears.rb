@@ -16,7 +16,8 @@ module Ears
         audio_uri = "http://#{params[:audio_uri]}"
 
         details = Open3.popen3("ffmbc -i #{audio_uri}"){|i,o,e,t| p e.read.chomp }
-
+        p [:details, details]
+        
         matches = details.match(/Duration: (\d\d:\d\d:\d\d)/im)
         raise RuntimeError.new("Could not obtain a duration from Uri") if matches.nil?
 
