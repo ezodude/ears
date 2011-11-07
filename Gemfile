@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'sinatra', :require => 'sinatra/base'
 gem 'json', :require => 'json/ext'
 gem 'racksh'
+gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
