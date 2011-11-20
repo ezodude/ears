@@ -12,3 +12,5 @@ if ENV['FFMBC']
 else
   FFMBC = '/usr/local/bin/ffmbc'
 end
+
+require 'cgi'
