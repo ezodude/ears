@@ -17,7 +17,7 @@ module Ears
         audio_uri.gsub!(/\s/, '+')
         p [:audio_uri, audio_uri]
 
-        details = Open3.popen3("#{FFMBC} -i #{audio_uri}"){|i,o,e,t| p e.read.chomp }
+        details = Open3.popen3("#{FFMBC} -i '#{audio_uri}'"){|i,o,e,t| p e.read.chomp }
         
         matches = details.match(/Duration: (\d\d:\d\d:\d\d)/im)
         raise RuntimeError.new("Could not obtain a duration from Uri") if matches.nil?
